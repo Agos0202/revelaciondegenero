@@ -222,7 +222,7 @@ function ScreenTwo() {
               <h3 className="s2-script">Team Niña</h3>
               <p className="s2-team-sub">Trae uno de estos regalitos(Opciones)</p>
               <ul>
-                <li>Pañales</li>
+                <li>Toallitas húmedas</li>
                 <li>Perfume</li>
               </ul>
             </div>
@@ -232,7 +232,7 @@ function ScreenTwo() {
               <h3 className="s2-script">Team Niño</h3>
               <p className="s2-team-sub">Trae uno de estos regalitos(Opciones)</p>
               <ul>
-                <li>Toallitas húmedas</li>
+                <li>Pañales</li>
                 <li>Shampoo</li>
               </ul>
             </div>
