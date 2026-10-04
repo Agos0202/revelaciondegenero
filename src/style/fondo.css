@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Parisienne&display=swap");
+
+/* Fondo beige compartido por las pantallas de la revelación */
+.fondo-revelacion {
+  position: relative;
+  overflow: hidden;
+  color: #6e5745;
+  font-family: "Cormorant Garamond", serif;
+  background:
+    radial-gradient(ellipse at 20% 15%, rgba(255, 255, 255, 0.7) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 90%, rgba(255, 255, 255, 0.55) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, #f6f2e8 0%, #eee8da 70%, #e7e0cf 100%);
+}
+
+/* textura de papel muy suave */
+.fondo-revelacion::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.5  0 0 0 0 0.47  0 0 0 0 0.4  0 0 0 0.12 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* ---------- Nubes vintage ---------- */
+.s1-cloud {
+  position: absolute;
+  height: auto;
+  opacity: 0.85;
+  filter: drop-shadow(0 4px 6px rgba(160, 130, 100, 0.08));
+  animation: s1-float 9s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ---------- Estrellas ---------- */
+.s1-star {
+  position: absolute;
+  fill: #c8a86a;
+  opacity: 0.7;
+  animation: s1-twinkle 3.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.s1-star.rosa { fill: #e2a5af; }
+.s1-star.celeste { fill: #a2bde0; }
+
+@keyframes s1-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes s1-twinkle {
+  0%, 100% { opacity: 0.25; transform: scale(0.8); }
+  50% { opacity: 0.9; transform: scale(1.1); }
+}
+
+@keyframes s1-fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s1-cloud, .s1-star { animation: none; }
+}
